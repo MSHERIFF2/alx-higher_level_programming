@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-def uppercase(s):
-    for char in s:
-        # Convert lowercase letters to uppercase using ASCII values
+def uppercase(str):
+    for char in str:
         if 'a' <= char <= 'z':
-            print(chr(ord(char) - ord('a') + ord('A')), end='')
-        else:
-            print(char, end='')
-
-    # Add a new line at the end
+            print("{}".format(chr(ord(char) - ord('a') + ord('A'))), end='')
     print()
