@@ -11,7 +11,7 @@ def listme(argv):
     else:
         print("{} arguments:".format(argvs))
     for i in range(1, argvs + 1):
-        print("{}: {}".format(1, argv[i - 1]))
+        print("{}: {}".format(i, argv[i - 1]))
 
 
 if __name__ == "__main__":
