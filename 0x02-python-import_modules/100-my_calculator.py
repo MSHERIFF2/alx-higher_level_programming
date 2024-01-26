@@ -1,25 +1,35 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import sys
-    from calculator_1 import add, sub, mul, div
 
+import sys
+from calculator_1 import add, sub, mul, div
+
+
+def main():
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
     a = int(sys.argv[1])
-    sign = sys.argv[2]
+    operator = sys.argv[2]
     b = int(sys.argv[3])
 
-    if sign == "+":
+    if operator == '+':
         result = add(a, b)
-    elif sign == "-":
+    elif operator == '-':
         result = sub(a, b)
-    elif sign == "*":
+    elif operator == '*':
         result = mul(a, b)
-    elif sign == "/":
+    elif operator == '/':
+        if b == 0:
+            print("Error: Division by zero")
+            sys.exit(1)
         result = div(a, b)
     else:
-        print("Unknown operator. Available operators: +, -, * and /")
+        print("Unknown operator. Available operators: +, -, *, /")
         sys.exit(1)
-    print("{} {} {} = {}".format(a, sign, b, result))
+
+    print("{} {} {} = {}".format(a, operator, b, result))
+
+
+if __name__ == "__main__":
+    main()
