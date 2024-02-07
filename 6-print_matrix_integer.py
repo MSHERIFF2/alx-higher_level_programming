@@ -1,7 +1,0 @@
-#!/usr/bin/python
-
-def print_matrix_integer(matrix=[[]]):
-    for row in matrix:
-        for element in row:
-            print(element, end=' ')
-        print()
