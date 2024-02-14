@@ -19,4 +19,3 @@ def roman_to_int(roman_string: str) -> int:
         prev_value = value
 
     return total
-
