@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 def only_diff_elements(set_1, set_2):
-    compliment = []
+    compliment = ()
     for i in set_1:
         if i not in set_1:
-            compliment.append(i)
+            compliment.add(i)
     for i in set_2:
-        if i not in set_2:
-            compliment.append(i)
+        if i not in set_1:
+            compliment.add(i)
     return compliment
