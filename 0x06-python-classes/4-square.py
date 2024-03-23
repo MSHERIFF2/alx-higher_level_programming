@@ -1,48 +1,45 @@
 #!/usr/bin/python3
+# 4-square.py by Sheriffdeen
+"""A module that defines a square """
 
 
 class Square:
-    """
-    class square that has attributes:
-        size
-    some attributes are protected from input.
-    """
+    """A class that represents a square"""
+
     def __init__(self, size=0):
+        """Initializing this square class
+        Args:
+            size: represnets the size of the square defined
+        Raises:
+            TypeError: if size is not integer
+            ValueError: if size is less than zero
         """
-        initialization function for our square clasee
-        """
-        if self.__validate_size(size):
-            self.__size = size
+
+        if not isinstance(size, int):
+            raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
+
+        self.__size = size
 
     @property
     def size(self):
-        """
-        getter for size attribute
-        """
+        """Retrieves size of square"""
+
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        setter for size attribute
-        """
-        if self.__validate_size(value):
-            self.__size = value
+        if not isinstance(value, int):
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = value
 
     def area(self):
         """
-        calculates the area of the square
+        Calculate area of the square
+        Returns: The square of the size
         """
-        return self.__size ** 2
 
-    def __validate_size(self, size):
-        """
-        validates the size, checking for errors
-        """
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            return True
-        return False
+        return (self.__size ** 2)
