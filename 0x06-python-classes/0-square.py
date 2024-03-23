@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+# 0-square.py by Sheriffdeen Muritala Adegoke
+""" Defines a square """
+
+
+
 class Square:
-    """
-    empty class. The class 
-    define a empty class for Square
-    """
+    """Square class that does nothing """
     pass
