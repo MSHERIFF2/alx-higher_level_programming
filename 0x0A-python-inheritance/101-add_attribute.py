@@ -1,14 +1,10 @@
 #!/usr/bin/python3
+"""this module defines a function that adds attributes to objects"""
 
 
-def add_attribute(obj, name, value):
-    """adds an attribute to the class if possible
-        -> aka is
+def add_attribute(obj, att, value):
+    """Add a new attribute to an object if possible
     """
-    builtins = (str, int, complex, bool, float, list,
-                tuple, dict, set, frozenset, type, object)
-    for _type in builtins:
-        if type(obj) is _type:
-            raise TypeError("can't add new attribute")
-
-    object.__setattr__(obj, name, value)
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("can't add new attribute")
+    setattr(obj, att, value)

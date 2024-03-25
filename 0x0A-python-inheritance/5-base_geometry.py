@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""An empty class"""
 
 
-class BaseGeometry():
-    """for use with shapes. Super class.
-    """
+class BaseGeometry:
+    """This is an empty class"""
     pass

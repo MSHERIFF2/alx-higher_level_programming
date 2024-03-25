@@ -1,5 +1,5 @@
--- script to update the score of bob to 10 in second_table
--- DML query to update bob
-UPDATE second_table
- SET score = 10
- WHERE name = 'Bob';
+-- updates the score of Bob to 10.
+-- You are not allowed to use Bob’s id value, only the name field
+-- The database name will be passed as an argument of the mysql command
+
+UPDATE second_table SET score=10 WHERE name="Bob";

@@ -1,11 +1,10 @@
 #!/usr/bin/python3
+"""Defines a base geometry class BaseGeometry."""
 
 
-class BaseGeometry():
-    """for use with shapes. Super class.
-    """
+class BaseGeometry:
+    """this class represents a base geometry"""
 
     def area(self):
-        """instance method to calculate area of shape
-        """
+        """method not implemented yet"""
         raise Exception("area() is not implemented")

@@ -1,10 +1,9 @@
 #!/usr/bin/python3
+"""Checks if object is an instance of a class"""
 
 
 def is_same_class(obj, a_class):
-    """checks if two objects are EXACTLY the same class
-        -> doesn't care about inheritance
+    """Return true if object is an instance of the
+    class, otherwise return false
     """
-    if not isinstance(a_class, type):
-        raise TypeError("a_class must be of type 'type'")
-    return (type(obj) is a_class)
+    return (type(obj) == a_class)
