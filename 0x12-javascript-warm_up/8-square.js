@@ -1,28 +1,17 @@
 #!/usr/bin/node
-const process = require('process');
-let build = '';
-let failed = 'Missing size';
-let num;
-let i;
-let j;
+const x = process.argv[2];
 
-if (process.argv.length > 2) {
-  num = parseInt(process.argv[2]);
-  if (isNaN(num)) {
-    build = failed;
-  } else {
-    for (i = 0; i < num; i++) {
-      if (i > 0) {
-        build += '\n';
-      }
-      for (j = 0; j < num; j++) {
-        build += 'X';
-      }
-    }
-  }
+if (!parseInt(x)) {
+  console.log('Missing size');
 } else {
-  build = failed;
-}
-if (build !== '') {
-  console.log(build);
+  for (let i = 0; i < x; i++) {
+    let y = 0;
+    let myVar = '';
+
+    while (y < x) {
+      myVar = myVar + 'X';
+      y++;
+    }
+    console.log(myVar);
+  }
 }

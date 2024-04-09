@@ -1,12 +1,5 @@
 #!/usr/bin/node
-const process = require('process');
+const argv0 = process.argv[2];
+const argv1 = process.argv[3];
 
-let val1;
-let val2;
-if (process.argv.length > 2) {
-  if (process.argv.length > 3) {
-    val2 = process.argv[3];
-  }
-  val1 = process.argv[2];
-}
-console.log(val1 + ' is ' + val2);
+console.log(`${argv0} is ${argv1}`);
