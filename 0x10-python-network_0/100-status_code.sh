@@ -1,3 +1,3 @@
 #!/bin/bash
-# bash script to display status code of server
-curl -L -s -X HEAD -w "%{http_code}" "$1"
+# sends a request to a URL, and displays only the status code of the response.
+curl -s -o /dev/null -w "%{http_code}" "$1"

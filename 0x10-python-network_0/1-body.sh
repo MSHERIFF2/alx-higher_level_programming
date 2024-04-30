@@ -1,3 +1,3 @@
 #!/bin/bash
-# shellcheck disable=SC2046
-if [ $(curl -L -s -X HEAD -w "%{http_code}" "$1") == '200' ]; then curl -Ls "$1"; fi
+# send a GET request to an URL with curl, and display the body of the response
+curl -sL "$1"

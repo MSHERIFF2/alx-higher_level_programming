@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""script for testing status of web pages
+"""Displays the X-Request-Id header variable of a request to a given URL.
+Usage: ./5-hbtn_header.py <URL>
 """
+import sys
+import requests
+
+
 if __name__ == "__main__":
-    import requests
-    import sys
     url = sys.argv[1]
-    response = requests.get(url)
-    meta = response.headers
-    print(meta.get('X-Request-Id'))
+
+    r = requests.get(url)
+    print(r.headers.get("X-Request-Id"))

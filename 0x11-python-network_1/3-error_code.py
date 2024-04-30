@@ -1,13 +1,19 @@
 #!/usr/bin/python3
-"""script for testing status of web pages
+"""Sends a request to a given URL and displays the response body.
+Usage: ./3-error_code.py <URL>
+  - Handles HTTP errors.
 """
+import sys
+import urllib.error
+import urllib.request
+
+
 if __name__ == "__main__":
-    import urllib.request
-    import urllib.error
-    import sys
     url = sys.argv[1]
+
+    request = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(url) as resp:
-            print(resp.read().decode('utf-8'))
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("ascii"))
     except urllib.error.HTTPError as e:
         print("Error code: {}".format(e.code))
