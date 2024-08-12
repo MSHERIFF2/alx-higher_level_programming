@@ -1,10 +1,10 @@
-const $ = window.$;
-const url = "https://swapi.co/api/films/?format=json";
-
-$.get(url, function(body) {
-  let films = body["results"];
-  let list = $("#list_movies");
-  films.forEach(element => {
-    list.append("<li>" + element["title"] + "</li>\n");
-  });
+$(document).ready(function () {
+	$.getJSON(
+		"https://swapi-api.alx-tools.com/api/films/?format=json",
+		function (data) {
+			data.results.forEach(function (film) {
+				$("<li>").text(film.title).appendTo("ul#list_movies");
+			});
+		}
+	);
 });

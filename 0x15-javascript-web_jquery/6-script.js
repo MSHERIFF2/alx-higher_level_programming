@@ -1,4 +1,5 @@
-const $ = window.$;
-$('#update_header').click(function () {
-  $('header').html('New Header!!!');
+$(document).ready(function () {
+	$("DIV#update_header").click(function () {
+		$("header").text("New Header!!!");
+	});
 });
