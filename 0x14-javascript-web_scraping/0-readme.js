@@ -1,13 +1,19 @@
 #!/usr/bin/node
-const process = require('process');
-const filesystem = require('fs');
+const fs = require('fs');
+const path = require('path');
 
-let file = process.argv[2];
+function readFile(filePath) {
+	    try {
+		            const content = fs.readFileSync(filePath, 'utf8');
+		            console.log(content);
+		        } catch (error) {
+				        console.error(`Error occurred: ${error.message}`);
+				    }
+}
 
-filesystem.readFile(file, 'utf8', function (err, data) {
-  if (err != null) {
-    console.log(err);
-  } else {
-    process.stdout.write(data);
-  }
-});
+if (process.argv.length !== 3) {
+	    console.log("Usage: node script.js <file_path>");
+} else {
+	    const filePath = path.resolve(process.argv[2]);
+	    readFile(filePath);
+}
